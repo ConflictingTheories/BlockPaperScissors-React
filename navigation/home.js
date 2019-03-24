@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, Button, TextInput, Image, View } from 'react-native';
+import React from 'react';
+import { Text, Button, View, SafeAreaView } from 'react-native';
+// import { SafeAreaView } from 'react-navigation';
 import { eth, web3, personal, net } from '../lib/gethRPC/gethCore';
 
 // Home Screen
@@ -32,40 +33,41 @@ export class HomeScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={{ flex: 1, flexDirection: 'column', alignItems:'stretch' }} >
-                {/* HEADER */}
-                <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}} >
-                    <Text style={{ fontSize: 24 }}>
-                    Block Paper Scissors
-                    </Text>
-                </View>
-                {/* BODY */}
-                <View style={{ flex: 8, flexDirection: 'column', alignItems:'center', justifyContent: "center" }} >
-                    <View style={{ flex: 4, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
-                        <Text>
-                            Welcome to Block Paper Scissors
-                            Open the side menu for options
+            <SafeAreaView style={{ flex: 1, flexDirection: 'column', alignItems:'stretch' }} >
+                    {/* HEADER */}
+                    <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}} >
+                        <Text style={{ fontSize: 24 }}>
+                        Block Paper Scissors
                         </Text>
-                        <Text>
-                            ---------------
-                            SHA3 TEST BELOW
-                            ---------------
-                        </Text>
-                        <Text>{this.state.name}</Text>
                     </View>
-                    {/* FOOTER */}
-                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch' }} >
-                        <Button
-                            title="Login" 
-                            onPress={() => navigate("Login")} 
-                            />
-                        <Button
-                            title="Register"
-                            onPress={() => navigate("Register")}
-                            />
+                    
+                    {/* BODY */}
+                    <View style={{ flex: 8, flexDirection: 'column', alignItems:'center', justifyContent: "center" }} >
+                        <View style={{ flex: 4, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
+                            <Text>
+                                Welcome to Block Paper Scissors
+                                Open the side menu for options
+                            </Text>
+                            <Text>
+                                ---------------
+                                SHA3 TEST BELOW
+                                ---------------
+                            </Text>
+                            <Text>{this.state.name}</Text>
+                        </View>
+
+                        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch' }} >
+                            <Button
+                                title="Login" 
+                                onPress={() => navigate("Login")} 
+                                />
+                            <Button
+                                title="Register"
+                                onPress={() => navigate("Register")}
+                                />
+                        </View>
                     </View>
-                </View>
-            </View>
+            </SafeAreaView>
         );
     }
 }

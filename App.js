@@ -1,5 +1,5 @@
 // REACT NAVIGATOR
-import { createStackNavigator, createDrawerNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import {createDrawerNavigator, createBottomTabNavigator, createAppContainer, createSwitchNavigator, TabNavigator } from 'react-navigation';
 
 // SCREENS
 import { HomeScreen } from './navigation/home';
@@ -11,16 +11,27 @@ import { CreateGameScreen } from './navigation/createGame';
 // TOOLS
 import utils from './lib/utils';
 
-// NAVIGATION (SIDE MENU)
-const MainNavigator = createDrawerNavigator(
-  {
+
+// LOGIN (Pre Auth)
+const loginNavigator = createDrawerNavigator({
     Home: HomeScreen,
     Login: LoginScreen,
-    Register: { screen: RegisterScreen },
-    CreateGame: { screen: CreateGameScreen },
-    JoinGame: { screen: JoinGameScreen }
+    Register: RegisterScreen,
+  });
+// MAIN (After Auth)
+const mainNavigator = createDrawerNavigator(
+  {
+    CreateGame: CreateGameScreen,
+    JoinGame: JoinGameScreen,
+    Logout: loginNavigator 
   }
 );
+// Separate Navigations
+const RootNavigation = createSwitchNavigator({
+  LoginScreen: { screen: loginNavigator },
+  Application: { screen: mainNavigator },
+});
+
 // APP
-const App = createAppContainer(MainNavigator);
+const App = createAppContainer(RootNavigation);
 export default App;

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, Alert, Button, TextInput, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, Text, Alert, Button, View } from 'react-native';
 import { eth, web3, personal, net } from "../lib/gethRPC/gethCore";
 
 export class LoginScreen extends React.Component {
@@ -46,7 +46,7 @@ export class LoginScreen extends React.Component {
         const { navigate } = this.props.navigation;
         this.alertLogin();
         return (
-            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
+            <SafeAreaView style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
                 {/* HEADER */}
                 <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }} >
                     <Text style={{ fontSize: 24 }}>
@@ -56,11 +56,11 @@ export class LoginScreen extends React.Component {
                 {/* BODY */}
                 <View style={{ flex: 8, flexDirection: 'column', alignItems: 'center', justifyContent: "center" }} >
                     <Button
-                        title={this.state.Name}
-                        onPress={() => navigate('Home', { name: 'Jane' })}
+                        title={"Login as " + this.state.Name}
+                        onPress={() => navigate('Application', { name: this.state.Name})}
                         />
                 </View>
-            </View>
+            </SafeAreaView>
         );
     }
 }

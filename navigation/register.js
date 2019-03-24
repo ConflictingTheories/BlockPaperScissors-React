@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, Button, TextInput, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView,Text, Button, TextInput, View } from 'react-native';
 import { eth, web3, personal, net } from "../lib/gethRPC/gethCore";
 
 export class RegisterScreen extends React.Component {
@@ -9,7 +9,7 @@ export class RegisterScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
+            <SafeAreaView style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
                 {/* HEADER */}
                 <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }} >
                     <Text style={{ fontSize: 24 }}>
@@ -31,7 +31,7 @@ export class RegisterScreen extends React.Component {
                         onPress={() => navigate('Home')}
                         />
                 </View>
-            </View>
+            </SafeAreaView>
         );
     }
 }
