@@ -12,6 +12,7 @@ export class LoginScreen extends React.Component {
         this.state = {
             Name : 'Test'
         }
+        this.fetchName();
     }
 
     alertLogin(){
@@ -26,7 +27,6 @@ export class LoginScreen extends React.Component {
                     style: 'cancel',
                 },
                 { text: 'Login', onPress: () => {
-                    this.props.navigation.closeDrawer();
                     console.log('OK Pressed')
                 } 
                 },
@@ -45,14 +45,21 @@ export class LoginScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         this.alertLogin();
-        this.fetchName();
-        this.props.navigation.openDrawer();
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Button
-                    title={this.state.Name}
-                    onPress={() => navigate('Home', { name: 'Jane' })}
-                    />
+            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
+                {/* HEADER */}
+                <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }} >
+                    <Text style={{ fontSize: 24 }}>
+                        Block Paper Scissors
+                    </Text>
+                </View>
+                {/* BODY */}
+                <View style={{ flex: 8, flexDirection: 'column', alignItems: 'center', justifyContent: "center" }} >
+                    <Button
+                        title={this.state.Name}
+                        onPress={() => navigate('Home', { name: 'Jane' })}
+                        />
+                </View>
             </View>
         );
     }

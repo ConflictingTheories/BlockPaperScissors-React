@@ -19,12 +19,6 @@ const MainNavigator = createDrawerNavigator(
     Register: { screen: RegisterScreen },
     CreateGame: { screen: CreateGameScreen },
     JoinGame: { screen: JoinGameScreen }
-  },
-  {
-    tabBarOptions: {
-      activeTintColor: "tomato",
-      inactiveTintColor: "gray"
-    }
   }
 );
 // APP

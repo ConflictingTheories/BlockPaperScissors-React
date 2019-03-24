@@ -9,19 +9,28 @@ export class RegisterScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>
-                    Username
-                </Text>
-                <TextInput />
-                <Text>
-                    Password
-                </Text>
-                <TextInput />
-                <Button
-                    title="Home"
-                    onPress={() => navigate('Home')}
-                    />
+            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch' }} >
+                {/* HEADER */}
+                <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }} >
+                    <Text style={{ fontSize: 24 }}>
+                        Block Paper Scissors
+                    </Text>
+                </View>
+                {/* BODY */}
+                <View style={{ flex: 8, flexDirection: 'column', alignItems: 'center', justifyContent: "center" }} >
+                    <Text>
+                        Username
+                    </Text>
+                    <TextInput />
+                    <Text>
+                        Password
+                    </Text>
+                    <TextInput />
+                    <Button
+                        title="Home"
+                        onPress={() => navigate('Home')}
+                        />
+                </View>
             </View>
         );
     }

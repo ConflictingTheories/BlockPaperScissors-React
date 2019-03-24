@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 28305,
-  "expoServerNgrokUrl": "https://74-uf9.anonymous.block-paper-scissors.exp.direct",
-  "packagerNgrokUrl": "https://packager.74-uf9.anonymous.block-paper-scissors.exp.direct",
-  "ngrokPid": 28391,
+  "packagerPid": 5580,
+  "expoServerNgrokUrl": "https://74-uf9.anonymous.blockpaperscissors-react.exp.direct",
+  "packagerNgrokUrl": "https://packager.74-uf9.anonymous.blockpaperscissors-react.exp.direct",
+  "ngrokPid": 5665,
   "webpackServerPort": null
 }
