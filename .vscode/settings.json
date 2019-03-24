@@ -1,0 +1,24 @@
+{
+    "eslint.enable": false,
+    "jshint.enable": false,
+    "tslint.enable": true,
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "jsAutolint.enable": false,
+    "format.disabled": [
+        "html",
+        "markdown",
+        "plaintext",
+        "diff",
+        "jade",
+        "xml",
+        "blade",
+        "handlebars",
+        "tpl",
+        "javascript"
+    ],
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "files.defaultLanguage": "typescriptreact"
+}
